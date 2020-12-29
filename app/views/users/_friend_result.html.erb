@@ -17,7 +17,7 @@
                                             You are friends
                                           </span>
                                         <% else %>
-                                          <%= link_to 'Follow friend?', '#',
+                                          <%= link_to 'Follow friend?', friendships_path(friend: friend),
                                             class: "btn btn-sm btn-success", method: :post %>
                                         <% end %>
           </td>
