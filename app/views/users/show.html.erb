@@ -1,0 +1,23 @@
+<h2> User Detail</h2>
+
+<div class="card card-header results-block">
+  <table class="col-md-12">
+    <tbody>
+      <tr>
+      <td><strong>Name: </strong> <%= @user.full_name %></td>
+      <td><strong>Email: </strong> <%= @user.email %></td>
+      <td>
+        <% if current_user.already_friends_with?(@user.id) %>
+
+                                      <span class="badge badge-secondary">
+                                        You are friends
+                                      </span>
+                                    <% else %>
+                                      <%= link_to 'Follow friend?', friendships_path(friend: @user),
+                                        class: "btn btn-sm btn-success", method: :post %>
+                                    <% end %>
+      </td>
+    </tbody>
+  </table>
+</div>
+
